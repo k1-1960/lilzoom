@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize the stream.</title>
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+  </head>
+  <body>
+    <img src="" alt="" id="play" />
+
+    <script>
+      var socket = io();
+
+      socket.on('stream', (image) => {
+        let img = document.getElementById('play');
+        img.src = image;
+      });
+    </script>
+  </body>
+</html>
